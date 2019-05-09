@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules//vue/dist/vue.js"></script>
+    <script src="../dist/vue-toast-demo.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="javascript:;" @click="modal">click me</a>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            modal: function () {
+                console.log('click')
+                /** 
+                 * 直接使用this.$toast.show报错原因：未使用到Vue上来
+                */
+                this.$toast.show('Hello World. I\'m Tammy')
+            }
+        }
+    })
+</script>
+</html>
